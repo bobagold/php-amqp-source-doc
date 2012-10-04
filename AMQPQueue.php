@@ -4,6 +4,12 @@ class AMQPQueue {
     public function bind($exchange_name, $routing_key) {}
     public function cancel($consumer_tag = "") {}
     public function __construct (AMQPConnection $amqp_connection) {}
+
+    /**
+     * @param $callback
+     * @param int $flags
+     * @link http://www.php.net/manual/en/amqpqueue.consume.php
+     */
     public function consume (callable $callback, $flags = AMQP_NOPARAM) {}
     public function _declare() {}
     public function delete() {}
